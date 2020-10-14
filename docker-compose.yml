@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  app:
+    image: node:12
+    user: node
+    restart: always
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3005:3005
+    working_dir: /app
+    volumes:
+      - "./:/app"
+    command: npm start
